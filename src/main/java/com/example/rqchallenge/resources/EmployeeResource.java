@@ -66,7 +66,8 @@ public class EmployeeResource implements IEmployeeController {
 				List<Employee> employeeList = employeeInfo.getAllEmployees(httpStatus);
 				if (!employeeList.isEmpty() && (httpStatus.get() == HttpStatus.OK)) {
 					for (Employee employee : employeeList) {
-						if (employee.getEmployee_name().toLowerCase().startsWith(searchString.toLowerCase())) {
+						if (employee.getEmployee_name().toLowerCase().startsWith(searchString.toLowerCase())
+								|| (employee.getEmployee_name().toLowerCase().contains(searchString.toLowerCase()))) {
 							searchEmplist.add(employee);
 						}
 					}
@@ -214,7 +215,7 @@ public class EmployeeResource implements IEmployeeController {
 		try {
 			Employee employee = employeeInfo.deleteEmployeeById(id,httpStatus);
 			if (httpStatus.get() == HttpStatus.OK) {
-		    	retResponse = "Employee deleted successfully.";
+		    	retResponse = employee.getEmployee_name();
 		    	System.out.println("Employee deleted successfully with the given id " + employee.getId());
 			}
 			else {

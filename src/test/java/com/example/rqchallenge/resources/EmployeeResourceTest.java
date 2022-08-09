@@ -135,7 +135,7 @@ class EmployeeResourceTest {
 					restTemplate.exchange(ServiceUrl + "/delete/1",HttpMethod.DELETE, null, String.class);
 			String delResponse = response.getBody();
 			     assertTrue(response.getStatusCode() == HttpStatus.OK);
-			assertEquals("Employee deleted successfully.",delResponse.toString());
+			assertEquals(employee.getEmployee_name(),delResponse.toString());
 		} catch (Exception e) {
 			e.printStackTrace();
 			fail("Exception while creating employee record by /create Rest API.");

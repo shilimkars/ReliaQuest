@@ -7,37 +7,37 @@ If you are unable to successfully receive responses from the endpoints, mocking 
 
 ### Endpoints to implement
 
-getAllEmployees()
+getAllEmployees() - http://localhost:8080/employees 
 
     output - list of employees
     description - this should return all employees
 
-getEmployeesByNameSearch()
+getEmployeesByNameSearch() - http://localhost:8080/search/{searchstring}
 
     output - list of employees
     description - this should return all employees whose name contains or matches the string input provided
 
-getEmployeeById(string id)
+getEmployeeById(string id) - http://localhost:8080/employee/{id}
 
     output - employee
     description - this should return a single employee
 
-getHighestSalaryOfEmployees()
+getHighestSalaryOfEmployees() - http://localhost:8080/highestSalary
 
     output - integer of the highest salary
     description -  this should return a single integer indicating the highest salary of all employees
 
-getTop10HighestEarningEmployeeNames()
+getTop10HighestEarningEmployeeNames() - http://localhost:8080/topTenHighestEarningEmployeeNames
 
     output - list of employees
     description -  this should return a list of the top 10 employees based off of their salaries
 
-createEmployee(string name, string salary, string age)
+createEmployee(string name, string salary, string age) - http://localhost:8080/create
 
     output - string of the status (i.e. success)
     description -  this should return a status of success or failed based on if an employee was created
 
-deleteEmployee(String id)
+deleteEmployee(String id) - http://localhost:8080/delete/{id}
 
     output - the name of the employee that was deleted
     description - this should delete the employee with specified id given
