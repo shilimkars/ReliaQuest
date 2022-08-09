@@ -14,7 +14,9 @@ repositories {
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-webflux'
     implementation 'javax.inject:javax.inject:1'
+    implementation 'org.springframework.cloud:spring-cloud-dependencies'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
